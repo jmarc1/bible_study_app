@@ -1,0 +1,37 @@
+*{
+    padding:0 auto;
+    margin:auto 0;
+}
+
+body,header{
+    background-color:antiquewhite;
+    width:50%;
+    margin:auto;
+    padding:auto 0px;
+}
+
+header{
+    width:800px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.menu{
+    display:flex;
+}
+.logo{
+    margin-right:400px;
+}
+.container{
+    width:600px;
+    display:flex;
+    justify-content: space-between;
+}
+#register-form{
+    display:block;
+    margin:0px auto;
+}
+a > img{
+    width:80px;
+    height:80px;
+}

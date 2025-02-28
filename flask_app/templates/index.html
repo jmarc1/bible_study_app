@@ -1,14 +1,35 @@
 <!DOCTYPE HTML>
 <html>
-    <head></head>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale-1">
+        <link href="{{url_for('static',filename='css/style.css')}}" rel='stylesheet'>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    </head>
     <body>
-        <header></header>
+        <header>
+            <div class='logo'>
+                <a href=""><img src="{{url_for('static',filename='img/11948251.jpg')}}"></a>
+            </div>
+            <div class="menu">
+                <a href=''>About Us</a>
+                <a href='/add_Event'>New Event</a>
+                <a href='/register'>register user</a>
+            </div>
+        </header>
         <main>
-            <h1>Hello World</h1>
             <div class="container">
-                <div class="left-container"></div>
-                <div class="main-container"></div>
-                <div class="right-container"></div>
+                <div class="left-container">
+                    <h2>Event Dates</h2>
+                </div>
+                <div class="main-container">
+                    <h2>Center Page</h2>
+                </div>
+                <div class="right-container">
+                    <h2>Calendar</h2>
+                </div>
+                <div class=></div>
             </div>
         </main>
         <footer></footer>
