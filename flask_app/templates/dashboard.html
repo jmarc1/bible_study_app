@@ -11,12 +11,12 @@
             <div class="menu">
                 <a href=''>About Us </a>
                 <a href='/add_Event'> New Event </a>
-                <a href='/register'> update user Info </a>
+                <a href='/update_user/{{session[user_id]}}'> update user </a>
                 <a href='/logout'> log out</a>
             </div>           
         </header>
         <main>
-            <h2>Current User: {{session['user']}}, user id:{{session['user_id']}}</h2>
+            <h2>Current User: {{session['user']}}</h2>
             <div class="container">
                 <div class="left-container">
                     <h2>Event Dates</h2>
@@ -41,7 +41,7 @@
                                 <td>{%if event['user_id'] == session['user_id']%}
                                     <a href="/view_events/{{event['id']}}">view</a> | <a href="/update_event/{{event['id']}}">update</a> | <a href="/delete_event/{{event['id']}}">delete</a>
                                     {%else%}
-                                    <a href='/view_events/{{event[id]}}'>view</a>
+                                    <a href="/view_events/{{event['id']}}">view</a>
                                     {%endif%}
                                 </td>
                             </tr>

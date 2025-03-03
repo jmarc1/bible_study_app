@@ -10,21 +10,23 @@
             </div>
             <div class="menu">
                 <a href='/home'>About Us</a>
-                <a href='/add_Event'>New Event</a>  
+                <a href='/add_Event'>New Event</a>
+                <a href='/logout'>logout</a>   
             </div>
         </header>
-        <main>
+        <main class="container">
             <div class=container>
-                <div class="flash_error">
-                    {%with messages = get_flashed_messages(category_filter = "register") %}
-                        {%if messages %}
-                            {%for message in messages %}
-                                <p>{{message}}</p>
-                            {%endfor%}
-                        {%endif%}
-                    {%endwith%}                  
-                </div>
-                <form action="/new_user" method="POST">
+                <form action="/update_user1" method="POST">
+                    <div class="flash_error">
+                        {%with messages = get_flashed_messages(category_filter = "register") %}
+                            {%if messages %}
+                                {%for message in messages %}
+                                    <p>{{message}}</p>
+                                {%endfor%}
+                            {%endif%}
+                        {%endwith%}                    <div class="flash_error">
+                        {}
+                    </div>
                     <div class="form_container">
                     <div class = 'register_form'>
                         <div class=group-form>
@@ -67,31 +69,8 @@
                 </div>
                     <div class="button_groupt">
                         <button name="action" value = "cancel">cancel</button>
-                        <button name="action" value = "submit">register</button>
+                        <button name="action" value = "update">update</button>
                     </div>
-                </form>
-                
-            <div class="login">
-                <div class="flash_error">{%with messages = get_flashed_messages(category_filter = "login") %}
-                        {%if messages %}
-                            {%for message in messages %}
-                            <p>{{message}}</p>
-                            {%endfor%}
-                        {%endif%}
-                    {%endwith%}
-                </div>
-                <form action="/login" method ='Post'>
-                    <h2>Login</h2>
-                    <div class=group-form>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email">
-                    </div>
-                    <div class=group-form>
-                        <label for="passwd">Password:</label>
-                        <input type="password" name="passwd">
-                    </div>
-                    <button name="action">login</button>
-                </form>
             </div>
         </main>
         <footer></footer>
