@@ -14,10 +14,37 @@
             <div class="menu">
                 <a href=''>About Us</a>
                 <a href='/add_Event'>New Event</a>
-                <a href='/register'>register user</a>
-            </div>
+                <a href='/dashboard'>Dashboard</a>
+                <a href='/logout'>logout</a>
         </header>
-        <main></main>
+        <main>
+            <div class="info">
+                <div class="view_detail">
+                    <label>Titel</label>
+                    <h5>{{event[0]['title']}}</h5>
+                </div>
+                <div class="view_detail">
+                    <label>location: </label>
+                    <h5>{{event[0]['location']}}</h5>
+                </div>
+                <div class="view_detail">
+                    <label>Event Date: </label>
+                    <h5>{{event[0]['event_date']}}</h5>
+                </div>
+                <div class="view_detail">
+                    <label>Time: </label>
+                    <h5>{{event[0]['time']}}</h5>
+                </div>
+                <div class="view_detail">
+                    <label>Details: </label>
+                    <h5>{{event[0]['details']}}</h5>
+                </div>
+                {%if event[0]['user_id'] == session['user_id']%}
+                    <a href ="/delete_event/{{event[0]['id']}}">Delete</a>
+                    <a href = "update_event/{{event[0][id]}}">Update</a>
+                {%endif%}
+            </div>
+        </main>
         <footer></footer>
     </body>
 </html>

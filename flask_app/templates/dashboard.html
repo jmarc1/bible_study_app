@@ -9,12 +9,46 @@
                 <a href="/home"><img src="{{url_for('static',filename='img/11948251.jpg')}}"></a>
             </div>
             <div class="menu">
-                <a href=''>About Us</a>
-                <a href='/add_Event'>New Event</a>
-                <a href='/register'>register user</a>
+                <a href=''>About Us </a>
+                <a href='/add_Event'> New Event </a>
+                <a href='/register'> update user Info </a>
+                <a href='/logout'> log out</a>
             </div>           
         </header>
-        <main></main>
+        <main>
+            <h2>Current User: {{session['user']}}, user id:{{session['user_id']}}</h2>
+            <div class="container">
+                <div class="left-container">
+                    <h2>Event Dates</h2>
+
+                </div>
+                <div class="main-container">
+                    <h2>Center Page</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Location</th>
+                            <th>Date and Time</th>
+                            <th>Details</th>
+                            <th>Action</th>
+                        </tr>
+                        {% for event in events%}
+                            <tr>
+                                <td>{{event['title']}}</td>
+                                <td>{{event['location']}}</td>
+                                <td>{{event['event_date']}} at {{event['time']}}</td>
+                                <td>{{event['details']}}</td>
+                                <td>{%if event['user_id'] == session['user_id']%}
+                                    <a href="/view_events/{{event['id']}}">view</a> | <a href="/update_event/{{event['id']}}">update</a> | <a href="/delete_event/{{event['id']}}">delete</a>
+                                    {%else%}
+                                    <a href='/view_events/{{event[id]}}'>view</a>
+                                    {%endif%}
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+        </main>
         <footer></footer>
     </body>
 </html>

@@ -10,12 +10,19 @@ body,header{
     padding:auto 0px;
 }
 
-header{
-    width:800px;
+.form_container{
+    width:600px;
     display:flex;
     justify-content: space-between;
 }
-
+header{
+    width:1000px;
+    display:flex;
+    justify-content: space-between;
+}
+body{
+    width:1000px;
+}
 .menu{
     display:flex;
 }
@@ -23,7 +30,7 @@ header{
     margin-right:400px;
 }
 .container{
-    width:600px;
+    width:800px;
     display:flex;
     justify-content: space-between;
 }
@@ -34,4 +41,26 @@ header{
 a > img{
     width:80px;
     height:80px;
+}
+
+.info{
+    width:700px;
+    margin: auto;
+}
+
+.view_details{
+    width:500px;
+    display:flex;
+}
+
+table,th,tr,td{
+    border:1px,black solid;
+    width:auto;
+}
+a{
+    margin:5px 0px;
+}
+
+.menu{
+    justify-content: space-around;
 }

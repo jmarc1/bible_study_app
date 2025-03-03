@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale-1">
+        <link href="{{url_for('static',filename='css/style.css')}}" rel='stylesheet'>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    </head>
+    <body>
+        <header>
+            <div class='logo'>
+                <a href="/"><img src="{{url_for('static',filename='img/11948251.jpg')}}"></a>
+            </div>
+            <div class="menu">
+                <a href='/'>About Us</a>
+                <a href='/pass_event'>Past Events</a>
+                <a href='/register'> login/register</a>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="left-container">
+                    <h2>Event Dates</h2>
+                    <ul>
+                        {%for dates in events%}
+                            <li>{{dates['title']}}: <br>{{dates["event_date"]}}</li>
+                        {%endfor%}
+                    </ul>
+                </div>
+                <div class="main-container">
+                    <h2>Past Events</h2>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>details</th>
+                            <th>Event Creator</th>
+                        </tr>
+                        {%for event in events%}
+                            <tr>
+                                <td>{{event['title']}}</td>
+                                <td>{{event['details']}},{{event['date']}}{{event['time']}}</td>
+                                <td>{{event['first_name']}} {{event['last_name']}}</td>
+                            </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
