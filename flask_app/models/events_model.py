@@ -54,3 +54,9 @@ class bible_event:
         info = connect_to_mysql(cls.db).query_db(query)
         print(info)
         return info
+    
+    
+    @classmethod
+    def attend(cls,data):
+        query = """Insert INTO attending_events (events_id,users_id,attended_date) VALUES(%(events_id)s,%(users_id)s,%(attended_date)s);"""
+        connect_to_mysql(cls.db).query_db(query,data)
